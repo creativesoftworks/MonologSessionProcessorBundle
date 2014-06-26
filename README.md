@@ -1,4 +1,4 @@
-MonologSymfonySessionProcessor
+MonologSessionProcessorBundle
 ==============================
 
-a Monolog processor to gather information about a Symfony session
+A Monolog processor to gather information about a Symfony session
