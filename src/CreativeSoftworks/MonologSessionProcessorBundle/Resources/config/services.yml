@@ -8,6 +8,7 @@ services:
             
     monolog.processor.username:
         class:  CreativeSoftworks\MonologSessionProcessorBundle\Processor\UsernameProcessor
+        lazy: true
         arguments:
             securityContext: @security.context
         tags:
