@@ -3,8 +3,11 @@
 namespace CreativeSoftworks\MonologSessionProcessorBundle\Processor;
 
 use Symfony\Component\Security\Core\SecurityContextInterface;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 
 class UsernameProcessor {
+    
+    const ANNONYMOUS_USERNAME = 'anon';
     
     /**
      * @var \Symfony\Component\Security\Core\SecurityContextInterface
@@ -26,7 +29,11 @@ class UsernameProcessor {
     public function processRecord(array $record)
     {
         $token = $this->securityContext->getToken();
-        $record['extra']['username'] = $token->getUsername();
+        if ($token instanceof TokenInterface) {
+            $record['extra']['username'] = $token->getUsername();
+        } else {
+            $record['extra']['username'] = self::ANNONYMOUS_USERNAME;
+        }
 
         return $record;
     }

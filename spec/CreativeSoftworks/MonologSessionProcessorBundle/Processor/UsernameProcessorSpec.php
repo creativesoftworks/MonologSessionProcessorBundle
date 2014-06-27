@@ -21,4 +21,12 @@ class UsernameProcessorSpec extends ObjectBehavior
         $processedRecord = $this->processRecord(array());
         $processedRecord->shouldBe(array('extra' => array('username' => 'testUsername')));
     }
+    
+    public function it_sets_anonymous_username_if_token_not_present(SecurityContextInterface $securityContext)
+    {
+        $securityContext->getToken()->shouldBeCalled()->willReturn(null);
+        
+        $processedRecord = $this->processRecord(array());
+        $processedRecord->shouldBe(array('extra' => array('username' => 'anon')));
+    }
 }
