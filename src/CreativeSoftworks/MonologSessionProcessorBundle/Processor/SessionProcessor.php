@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 class SessionProcessor {
     
     /**
-     * @var SessionInterface
+     * @var \Symfony\Component\HttpFoundation\Session\SessionInterface
      */
     private $session;
     

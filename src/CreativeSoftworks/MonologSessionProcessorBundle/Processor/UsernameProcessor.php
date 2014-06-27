@@ -7,7 +7,7 @@ use Symfony\Component\Security\Core\SecurityContextInterface;
 class UsernameProcessor {
     
     /**
-     * @var Symfony\Component\Security\Core\SecurityContextInterface
+     * @var \Symfony\Component\Security\Core\SecurityContextInterface
      */
     private $securityContext;
 
