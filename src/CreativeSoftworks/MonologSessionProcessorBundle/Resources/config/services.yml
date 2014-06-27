@@ -1,0 +1,14 @@
+services:
+    monolog.processor.session:
+        class:  CreativeSoftworks\MonologSessionProcessorBundle\Processor\SessionProcessor
+        arguments:
+            session: @session
+        tags:
+            - { name: monolog.processor, method: processRecord }
+            
+    monolog.processor.username:
+        class:  CreativeSoftworks\MonologSessionProcessorBundle\Processor\UsernameProcessor
+        arguments:
+            securityContext: @security.context
+        tags:
+            - { name: monolog.processor, method: processRecord }

@@ -1,0 +1,27 @@
+{
+    "name": "creativesoftworks/monolog-session-processor-bundle",
+    "description": "A Monolog processor to gather information about a Symfony session",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ricardo Oliveira",
+            "email": "ricardo.oliveira@creative-softworks.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/framework-bundle": "2.*"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "2.*"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-0": {
+            "CreativeSoftworks\\MonologSessionProcessorBundle": "src/"
+        }
+    }
+}
